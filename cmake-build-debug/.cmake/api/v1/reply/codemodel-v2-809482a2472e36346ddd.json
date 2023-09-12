@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Rock_Paper_Scissors::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Rock_Paper_Scissors-Debug-ad72a3f8df1f0e039ed8.json",
+					"jsonFile" : "target-Rock_Paper_Scissors-Debug-6d37497fc873834ae9a6.json",
 					"name" : "Rock_Paper_Scissors",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/kaedo/OneDrive/Documents/GitHub/Rock-Paper-Scissors-Again/cmake-build-debug",
-		"source" : "C:/Users/kaedo/OneDrive/Documents/GitHub/Rock-Paper-Scissors-Again"
+		"build" : "C:/Users/chop/Documents/GitHub/Rock-Paper-Scissors-Again/cmake-build-debug",
+		"source" : "C:/Users/chop/Documents/GitHub/Rock-Paper-Scissors-Again"
 	},
 	"version" : 
 	{
