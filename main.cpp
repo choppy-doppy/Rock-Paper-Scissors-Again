@@ -32,21 +32,21 @@ void randomizer() {
 
             // converts the integer from the randIndex into a string
             if (randIndex == 0) {
-                cout << "rock" << endl;
+                cout << "   rock" << endl;
             } else if (randIndex == 1) {
-                cout << "paper" << endl;
+                cout << "   paper" << endl;
             } else if (randIndex == 2) {
-                cout << "scissors" << endl;
+                cout << "   scissors" << endl;
             }
 
             // checking win conditions
             if (userInput == choice[0] && randIndex == 1 || userInput == choice[1] && randIndex == 2 || userInput == choice[2] && randIndex == 1) {
-                cout << "i win!!" << endl;
+                cout << "   i win!!" << endl;
             } else if (userInput == choice[0] && randIndex == 2 || userInput == choice[1] && randIndex == 0 || userInput == choice[2] && randIndex == 1)
-                cout << "aww i lose :(" << endl;
+                cout << "   aww i lose :(" << endl;
 
         } else
-            cout << "Invalid Response" << endl;
+            cout << "INVALID RESPONSE" << endl;
     }
 }
 
