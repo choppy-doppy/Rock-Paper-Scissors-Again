@@ -1,21 +1,21 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <windows.h>
 
 using namespace std;
 void randomizer();
-void inputCheck();
 
 int main() {
     cout << "Type rock, paper, or scissors!" << endl;
     // sets the current time as a random seed to make the random generation a little more random
-    srand(time(0));
+    srand(GetTickCount());
     // jumps to the function that checks for exit codes and invalid responses
-    inputCheck();
+    randomizer();
 }
 
-void inputCheck() {
-    while ( 1 != 0) {
+void randomizer() {
+    for ( ; ; ) {
         string userInput;
         // variable that contains the 3 valid responses
         vector<string> choice = {"rock", "paper", "scissors"};
@@ -25,19 +25,29 @@ void inputCheck() {
         if (userInput == "exit")
             exit(2);
         if (userInput == choice[0] || userInput == choice[1] || userInput == choice[2]) {
-            randomizer();
+
+            vector<string> options = {"rock", "paper", "scissors"};
+
+            int randIndex = rand() % 3;
+
+            // converts the integer from the randIndex into a string
+            if (randIndex == 0) {
+                cout << "rock" << endl;
+            } else if (randIndex == 1) {
+                cout << "paper" << endl;
+            } else if (randIndex == 2) {
+                cout << "scissors" << endl;
+            }
+
+            // checking win conditions
+            if (userInput == choice[0] && randIndex == 1 || userInput == choice[1] && randIndex == 2 || userInput == choice[2] && randIndex == 1) {
+                cout << "i win!!" << endl;
+            } else if (userInput == choice[0] && randIndex == 2 || userInput == choice[1] && randIndex == 0 || userInput == choice[2] && randIndex == 1)
+                cout << "aww i lose :(" << endl;
+
         } else
             cout << "Invalid Response" << endl;
     }
 }
-
-void randomizer() {
-    vector<string> options = {"rock", "paper", "scissors"};
-    int randIndex = rand() % 3;
-    cout << options[randIndex];
-    cout << "\n";
-}
-
-
 
 
