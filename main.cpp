@@ -2,6 +2,7 @@
 #include <vector>
 #include <cstdlib>
 #include <windows.h>
+#include <random>
 
 using namespace std;
 void randomizer();
@@ -9,7 +10,6 @@ void randomizer();
 int main() {
     cout << "Type rock, paper, or scissors!" << endl;
     // sets the current time as a random seed to make the random generation a little more random
-    srand(GetTickCount());
     // jumps to the function that checks for exit codes and invalid responses
     randomizer();
 }
@@ -28,21 +28,23 @@ void randomizer() {
 
             vector<string> options = {"rock", "paper", "scissors"};
 
-            int randIndex = rand() % 3;
+            random_device rd;
+            mt19937 mt(rd());
+            uniform_int_distribution<int> dist(0, 2);
 
             // converts the integer from the randIndex into a string
-            if (randIndex == 0) {
+            if (dist == 0) {
                 cout << "   rock" << endl;
-            } else if (randIndex == 1) {
+            } else if (dist == 1) {
                 cout << "   paper" << endl;
-            } else if (randIndex == 2) {
+            } else if (dist == 2) {
                 cout << "   scissors" << endl;
             }
 
             // checking win conditions
-            if (userInput == choice[0] && randIndex == 1 || userInput == choice[1] && randIndex == 2 || userInput == choice[2] && randIndex == 1) {
+            if (userInput == choice[0] && dist == 1 || userInput == choice[1] && dist == 2 || userInput == choice[2] && dist == 1) {
                 cout << "   i win!!" << endl;
-            } else if (userInput == choice[0] && randIndex == 2 || userInput == choice[1] && randIndex == 0 || userInput == choice[2] && randIndex == 1)
+            } else if (userInput == choice[0] && dist == 2 || userInput == choice[1] && dist == 0 || userInput == choice[2] && dist == 1)
                 cout << "   aww i lose :(" << endl;
 
         } else
